@@ -5,7 +5,7 @@
 	<div class="bg_parallax image_01_parallax"></div>
 	<div class="opacy_bg_02">
 		<div class="container">
-			<h1>Market</h1>
+			<h1>Become a Member</h1>
 		</div>
 	</div>
 </div>
@@ -50,7 +50,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="thinborder-ontop">
-                                <h3>Please Register Here</h3>
+                                <h3>Please Register to Become a Member</h3>
                                 <form id="userregisterationform" action="{{ route('market.store') }}" method="POST">        @csrf               
                                     <div class="form-group row">
                                         <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
@@ -76,10 +76,8 @@
                                         <div class="col-md-6">
                                             <select id="crop" type="text" class="form-control" name="crop">
                                                 <option></option>
-                                                <option>Beans</option>
                                                 <option>Avocado</option>
-                                                <option>Tomatoes</option>
-                                                <option>French Beans</option>
+                                                <option>Beans</option>
                                             </select>
 
                                         </div>
@@ -111,7 +109,7 @@
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id neque ultrices, pretium mauris id, pharetra lacus. Suspendisse elementum et felis in mollis. Quisque nec porttitor diam, sed tincidunt quam. Aliquam lacinia nisl non lobortis ornare. Nam dapibus dui id lacus condimentum facilisis. Sed bibendum mi at ornare venenatis. </p>
                                 <div class="row text-center padding-top-mini">
-                                    <a href="{{ route('marketdetails') }}" class="btn btn-primary">View Details</a>
+                                    <a href="{{ route('marketdetails') }}" class="btn btn-primary">Member Profiles</a>
                                 </div>
                             </div>
                         </div>

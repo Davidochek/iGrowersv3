@@ -9,6 +9,6 @@ class Order extends Model
 {
     use HasFactory;
     protected $fillable = [
-    	'bid', 'sname', 'spid', 'fname', 'fphone', 'flocation', 'date',
+    	'bid', 'sname', 'spid', 'fname', 'fphone', 'flocation', 'date', 'sdetails'
     ];
 }

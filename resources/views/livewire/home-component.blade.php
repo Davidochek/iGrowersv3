@@ -94,7 +94,7 @@
                                             class="img-responsive">
                                     </div>
                                     <div class="info-gallery">
-                                        <h3>Market</h3>
+                                        <h3>Become a Member</h3>
                                         <hr class="separator">
                                     </div>
                                 </a>

@@ -15,6 +15,7 @@ class OrderController extends Controller
         'fname' => 'required',
         'fphone' => 'required',
         'flocation' => 'required',
+        'sdetails' => 'required',
         'date' => 'required',
     ]);
 

@@ -18,14 +18,14 @@
                     <h2 style="color:#fff;">{{$pests->name}} Pests</h2>
                     <p class="lead">For what {{$pests->name}} pests do you seek the services </p>
                 </div>
-                <div class="filter-header">
+                {{-- <div class="filter-header">
                     <form id="sform" action="pests" method="post">
                         @csrf
                         <input type="text" id="q" name="q" required="required" placeholder="Start typing name to find pest"
                             class="input-large typeahead" autocomplete="off">
                         <input type="submit" name="submit" value="Search">
                     </form>
-                </div>
+                </div> --}}
             </div>
         </section>
         <section class="content-central">

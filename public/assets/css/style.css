@@ -434,6 +434,7 @@ hr.tall{
 .img-hover{
   position: relative;
   overflow: hidden;
+  max-height: 200px;
 }
 .img-hover img{
   -webkit-transition: 0.3s all ease;

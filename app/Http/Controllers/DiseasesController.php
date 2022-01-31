@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Diseases;
+use App\Models\Crop;
 use Illuminate\Http\Request;
 
 class DiseasesController extends Controller
@@ -14,7 +15,8 @@ class DiseasesController extends Controller
      */
     public function index()
     {
-        return view('crops.diseases');
+        $crops = Crop::all();
+        return view('crops.diseases', compact('crops'));
     }
 
     /**

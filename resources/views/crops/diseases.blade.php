@@ -23,28 +23,33 @@
                     <h2 style="color:#fff;">iGrowers Infohub</h2>
                     <p class="lead">For what crop do you seek the services </p>
                 </div>
-                <div class="filter-header">
-                    <form id="sform" action="{{ route('searchDisease') }}" method="post">
-                        @csrf
-                        <input type="text" id="q" name="q" required="required" placeholder="Start typing name to find crops"
-                            class="input-large typeahead" autocomplete="off">
-                        <input type="submit" name="submit" value="Search">
-                    </form>
+            </div>
+        </section>
+        <section class="content-central">
+            <div class="content_info">
+                <div>
+                    <div class="container">
+                        <div class="portfolioContainer">
+                            @foreach ($crops as $crop)
+                            <div class="col-col-xs-12 col-sm-6 col-md-3 hsgrids"
+                                style="padding-right: 5px;padding-left: 5px;">
+                                <a class="g-list" href="{{ route('showDiseases', $crop->id) }}">
+                                    <div class="img-hover">
+                                        <img src="{{asset($crop->image)}}" alt="{{$crop->name}}"
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="info-gallery">
+                                        <h3>{{$crop->name}}</h3>
+                                    </div>
+                                </a>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div>
             </div>
         </section>
 
 @endsection
-
-@push('scripts')
-<script type="text/javascript">
-  var path = "{{ route('autocomplete') }}";
-  $('input.typeahead').typeahead({
-    source: function(query, process){
-        return $.get(path, {query:query}, function(data){
-            return process(data);
-        });
-    }
-  });  
-</script>
-@endpush

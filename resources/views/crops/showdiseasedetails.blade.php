@@ -45,7 +45,7 @@
 											<img id="imgclick2" src="{{ asset($diseasedetails->image3) }}" alt="" class="img-responsive" style="height: 150px;" onclick="myFunction(this);">
 										</div>
 										<div class="col-md-4">
-											<img id="imgclick3" src="{{ asset($diseasedetails->image4) }}"  alt="" class="img-responsive" style="height: 150px;" onclick="myFunction(this);">
+											<img id="imgclick3" src="{{ asset($diseasedetails->image1) }}"  alt="" class="img-responsive" style="height: 150px;" onclick="myFunction(this);">
 										</div>
 									</div>
 								</div>
@@ -117,15 +117,12 @@
 										<tr>
 											<td style="border-top: none;"> </td>
 										</tr>
+										@foreach ($diseases->diseases as $disease)
 										<tr>
-											<td> </td>
+											<td><a href="{{ url('/showDiseaseDetails/' .$disease->id) }}">{{$disease->name}}</a> </td>
 										</tr>
-										<tr>
-											<td> </td>
-										</tr>
-										<tr>
-											<td> </td>
-										</tr>
+										@endforeach
+										
 									</table>
 								</div>
 							</div>

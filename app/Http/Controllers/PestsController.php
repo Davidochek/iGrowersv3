@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pests;
+use App\Models\Crop;
 use Illuminate\Http\Request;
 
 class PestsController extends Controller
@@ -14,7 +15,8 @@ class PestsController extends Controller
      */
     public function index()
     {
-        return view('crops.pests');
+        $crops = Crop::all();
+        return view('crops.pests', compact('crops'));
     }
 
     /**

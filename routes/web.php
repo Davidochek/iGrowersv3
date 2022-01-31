@@ -41,7 +41,9 @@ Route::get('/autocomplete', [SearchController::class, 'autocomplete'])->name('au
 Route::post('/searchPest', [SearchController::class, 'searchPest'])->name('searchPest');
 Route::post('/searchDisease', [SearchController::class, 'searchDisease'])->name('searchDisease');
 Route::get('/showPests/{pest_slug}', [SearchController::class, 'showPests'])->name('showPests');
+Route::get('/showPests/{id}', [SearchController::class, 'showPests'])->name('showPests');
 Route::get('/showDiseases/{disease_slug}', [SearchController::class, 'showDiseases'])->name('showDiseases');
+Route::get('/showDiseases/{id}', [SearchController::class, 'showDiseases'])->name('showDiseases');
 Route::get('/showPestDetails/{id}', [SearchController::class, 'showPestDetails'])->name('showPestDetails');
 Route::get('/showDiseaseDetails/{id}', [SearchController::class, 'showDiseaseDetails'])->name('showDiseaseDetails');
 Route::get('/searchPests', [SearchController::class, 'searchPests'])->name('searchPests');

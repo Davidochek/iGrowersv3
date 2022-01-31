@@ -40,21 +40,35 @@ class SearchController extends Controller
    	}
    }
 
-    public function showPests($pest_slug)
+    public function showPests($id)
     { 
     	
     	// dd($pest_slug);
-       $pests = Crop::with('pests')->where('name', $pest_slug)->firstOrFail();
+      
+       $pests = Crop::with('pests')->where('id', $id)->firstOrFail();
         return view('crops.showpests')->with('pests', $pests);
     }
 
-     public function showDiseases($disease_slug)
+    // public function showPests($pest_slug)
+    // { 
+      
+    //    $pests = Crop::with('pests')->where('name', $pest_slug)->firstOrFail();
+    //     return view('crops.showpests')->with('pests', $pests);
+    // }
+
+     public function showDiseases($id)
     { 
     	
     	// dd($pest_slug);
-       $diseases = Crop::with('diseases')->where('name', $disease_slug)->firstOrFail();
+       $diseases = Crop::with('diseases')->where('id', $id)->firstOrFail();
         return view('crops.showdiseases')->with('diseases', $diseases);
-    }
+    } 
+
+    // public function showDiseases($disease_slug)
+    // { 
+    //    $diseases = Crop::with('diseases')->where('name', $disease_slug)->firstOrFail();
+    //     return view('crops.showdiseases')->with('diseases', $diseases);
+    // }
 
 
     public function showPestDetails($id)
@@ -62,7 +76,11 @@ class SearchController extends Controller
       
       // dd($pest_slug);
        $pestdetails = Pests::with('crops')->where('id', $id)->firstOrFail();
-        return view('crops.showpestdetails')->with('pestdetails', $pestdetails);
+       foreach ($pestdetails->crops as $crop) {
+         $crop_id = $crop->id;
+       }
+       $pests = Crop::with('pests')->where('id', $crop_id)->firstOrFail();
+        return view('crops.showpestdetails')->with('pestdetails', $pestdetails)->with('pests', $pests);
     }
 
      public function showDiseaseDetails($id)
@@ -70,7 +88,11 @@ class SearchController extends Controller
       
       // dd($pest_slug);
        $diseasedetails = Diseases::with('crops')->where('id', $id)->firstOrFail();
-        return view('crops.showdiseasedetails')->with('diseasedetails', $diseasedetails);
+       foreach ($diseasedetails->crops as $crop) {
+         $crop_id = $crop->id;
+       }
+       $diseases = Crop::with('diseases')->where('id', $crop_id)->firstOrFail();
+        return view('crops.showdiseasedetails')->with('diseasedetails', $diseasedetails)->with('diseases', $diseases);
     }
 
     public function searchPests(Request $request)

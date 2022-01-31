@@ -104,7 +104,7 @@
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLabel">Order Services</h5>
+							<h5 class="modal-title" id="exampleModalLabel">Order Service</h5>
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
 							</button>
@@ -147,6 +147,12 @@
 							<label for="" class="col-md-3">Your Location</label>
 							<div class="col-md-9">
 								<input type="text" class="form-control" id="flocation"  name ="flocation">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label for="" class="col-md-3">Order Detals</label>
+							<div class="col-md-9">
+								<textarea type="text" class="form-control" id="sdetails" placeholder="1 Acre farm with 100 avocado trees"  name ="sdetails"></textarea> 
 							</div>
 						</div>
 						<div class="row form-group">
@@ -219,6 +225,7 @@
 					'fphone':  $('#fphone').val(),
 					'flocation': $('#flocation').val(),
 					'date':  $('#date').val(),
+					'sdetails':  $("#sdetails").val(),
 				},
 			}).then(function(response){
 				window.location.reload(); 
