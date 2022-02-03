@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content')
-
          <section class="tp-banner-container">
             <div class="tp-banner">
                 <ul>

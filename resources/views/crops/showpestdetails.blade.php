@@ -100,8 +100,11 @@
 										@else
 										--
 										@endif
-										 <div class="content-btn"><a href="#"
-                                                class="btn btn-primary">Pesticides Use</a></div>
+										 <div class="content-btn">
+										 	@foreach ($pestdetails->crops as $crop)
+										 	<a href="{{ route('showPestPesticides', $pestdetails->id) }}"  class="btn btn-primary">Pesticides Use</a>
+											@endforeach
+                                            </div>
 									</div>
 								</div>
 							</div>

@@ -83,6 +83,18 @@ class SearchController extends Controller
         return view('crops.showpestdetails')->with('pestdetails', $pestdetails)->with('pests', $pests);
     }
 
+     public function showPestPesticides($id){
+      // dd($id);
+       $pestdetails = Pests::with('crops')->where('id', $id)->firstOrFail();
+       foreach ($pestdetails->crops as $crop) {
+         $crop_id = $crop->id;
+       }
+       $pesticides = Crop::with('pesticides')->where('id', $crop_id)->firstOrFail();
+        return view('crops.showPestPesticides')->with('pestdetails', $pestdetails)->with('pesticides', $pesticides);
+      // $pesticides = Crop::with('pesticides')->where('id', $id)->firstOrFail();
+      // return view('crops.showPestPesticides', compact('pesticides'));
+     }
+
      public function showDiseaseDetails($id)
     { 
       
@@ -94,6 +106,15 @@ class SearchController extends Controller
        $diseases = Crop::with('diseases')->where('id', $crop_id)->firstOrFail();
         return view('crops.showdiseasedetails')->with('diseasedetails', $diseasedetails)->with('diseases', $diseases);
     }
+    public function showDiseasePesticides($id){
+
+     $pestdetails = Diseases::with('crops')->where('id', $id)->firstOrFail();
+       foreach ($pestdetails->crops as $crop) {
+         $crop_id = $crop->id;
+       }
+       $pesticides = Crop::with('pesticides')->where('id', $crop_id)->firstOrFail();
+        return view('crops.showDiseasePesticides')->with('pestdetails', $pestdetails)->with('pesticides', $pesticides);
+     }
 
     public function searchPests(Request $request)
     {

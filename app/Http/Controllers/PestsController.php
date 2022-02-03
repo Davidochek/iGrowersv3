@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pests;
+use App\Models\Pesticide;
 use App\Models\Crop;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,7 @@ class PestsController extends Controller
      */
     public function index()
     {
-        $crops = Crop::all();
+        $crops = Crop::with('pesticides')->get();
         return view('crops.pests', compact('crops'));
     }
 

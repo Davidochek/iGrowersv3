@@ -45,7 +45,9 @@ Route::get('/showPests/{id}', [SearchController::class, 'showPests'])->name('sho
 Route::get('/showDiseases/{disease_slug}', [SearchController::class, 'showDiseases'])->name('showDiseases');
 Route::get('/showDiseases/{id}', [SearchController::class, 'showDiseases'])->name('showDiseases');
 Route::get('/showPestDetails/{id}', [SearchController::class, 'showPestDetails'])->name('showPestDetails');
+Route::get('/showPestPesticides/{id}', [SearchController::class, 'showPestPesticides'])->name('showPestPesticides');
 Route::get('/showDiseaseDetails/{id}', [SearchController::class, 'showDiseaseDetails'])->name('showDiseaseDetails');
+Route::get('/showDiseasePesticides/{id}', [SearchController::class, 'showDiseasePesticides'])->name('showDiseasePesticides');
 Route::get('/searchPests', [SearchController::class, 'searchPests'])->name('searchPests');
 // Route::resource('/market', MarketController::class);
 Route::post('/create_orders', [OrderController::class, 'create_orders'])->name('create_orders');

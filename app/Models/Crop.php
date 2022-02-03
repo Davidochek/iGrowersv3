@@ -13,6 +13,11 @@ class Crop extends Model
         return $this->belongsToMany(Pests::class);
     }
 
+	 public function pesticides()
+    {
+        return $this->belongsToMany(Pesticide::class);
+    }
+
      public function diseases()
     {
         return $this->belongsToMany(Diseases::class);
