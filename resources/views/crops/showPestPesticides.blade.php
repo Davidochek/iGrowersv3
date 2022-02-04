@@ -32,10 +32,13 @@
 											</tr>
 										</thead>
 										<tbody>
-											@foreach ($pesticides->pesticides as $pesticide)
+											<?php
+											$index =0;
+											?>
+											@foreach ($pesticides->pesticides as $key=> $pesticide)
 											@if ($pesticide->attack == $pestdetails->name)
 												<tr>
-													<td>{{$loop->index}}</td>
+													<td>{{++$index}}</td>
 												<td>{{$pesticide->name}}</td>
 												<td>{{$pesticide->reg_no}}</td>
 												<td>{{$pesticide->agent}}</td>

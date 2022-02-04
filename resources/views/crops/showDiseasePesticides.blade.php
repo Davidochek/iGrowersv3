@@ -26,16 +26,19 @@
 											<tr>
 												<td>No.</td>
 												<th>Name</th>
-												<th>Reg. N.o</th>
+												<th>Reg. No.</th>
 												<th>Agent</th>
 												<th>Uses</th>
 											</tr>
 										</thead>
 										<tbody>
-											@foreach ($pesticides->pesticides as [$key, $pesticide])
+											<?php
+											$index =0;
+											?>
+											@foreach ($pesticides->pesticides as $key=>$pesticide)
 											@if ($pesticide->attack == $pestdetails->name)
 												<tr>
-													<td>{{$key+1}}</td>
+													<td>{{++$index}}</td>
 												<td>{{$pesticide->name}}</td>
 												<td>{{$pesticide->reg_no}}</td>
 												<td>{{$pesticide->agent}}</td>
