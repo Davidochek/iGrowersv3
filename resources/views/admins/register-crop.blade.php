@@ -1,5 +1,5 @@
-@extends('layouts.admin2')
+@extends('layouts.admins')
 @section('content')
 
-register crop
+
 @endsection

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use App\Models\Services;
 use Illuminate\Http\Request;
 
@@ -14,27 +15,31 @@ class ServicesController extends Controller
      */
     public function index()
     {
-       $services = Services::latest()->get();
-       return view('crops.services', compact('services'))->with('i', (request()->input('page', 1) - 1) * 5);
-   }
+     $services = Services::latest()->get();
+     return view('crops.services', compact('services'))->with('i', (request()->input('page', 1) - 1) * 5);
+ }
 
 
-   public function all(){
+ public function all(){
     $services = Services::latest()->get();
     return view('superusers.view-services', compact('services'));
 }
+public function service_requests(){
+    $orders = Order::latest()->get();
+    return view('superusers.requests', compact('orders'));
+}
 
-   public function preview($id){
+public function preview($id){
     $service = Services::find($id);
     return $service;
 }
 
 public function approve(Request $request,  $id){
-         $id = $request['id'];
-        $service = Services::findOrFail($id);
-        $service->update(['status' => $request['status']]);
+   $id = $request['id'];
+   $service = Services::findOrFail($id);
+   $service->update(['status' => $request['status']]);
 
-        return response()->json(['success' => ' Approved successfully!']);
+   return response()->json(['success' => ' Approved successfully!']);
 }
     /**
      * Show the form for creating a new resource.
@@ -47,15 +52,15 @@ public function approve(Request $request,  $id){
     }
 
     public function create_service(Request $request) {
-       $request->validate([
+     $request->validate([
         'name' => 'required',
         'details' => 'required',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ]);
 
-       $input = $request->all();
+     $input = $request->all();
 
-       if ($image = $request->file('image')) {
+     if ($image = $request->file('image')) {
         $destinationPath = 'image/';
         $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
         $image->move($destinationPath, $profileImage);

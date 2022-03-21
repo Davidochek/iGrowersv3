@@ -96,6 +96,7 @@ Route::get('/all', [ServicesController::class, 'all'])->name('all');
 Route::get('/preview/{id}', [ServicesController::class, 'preview'])->name('preview');
 Route::post('/approve/{id}', [ServicesController::class, 'approve'])->name('approve');
 Route::post('create_service', [ServicesController::class, 'create_service'])->name('create_service');
+Route::get('service_requests', [ServicesController::class, 'service_requests'])->name('service_requests');
 });
 });
 

@@ -1,28 +1,7 @@
-@extends('layouts.admin2')
+@extends('layouts.superusers')
 
 @section('content')
-
-
-<div class="app-main__outer">
-	<div class="app-main__inner">
-		<div class="app-page-title">
-			<div class="page-title-wrapper">
-				<div class="page-title-heading">
-					<div>iGrowers Service Providers
-					</div>
-				</div>
-				<div class="page-title-actions">
-					<button type="button" data-toggle="tooltip" title="Logout" data-placement="bottom" class="btn-shadow mr-3 btn btn-dark">
-						<a href="{{ route('superusers.logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-							<i class="fa fa-power-off"></i>
-						</a>
-						<form action="{{ route('superusers.logout') }}" method="post" id="logout-form">@csrf</form>  
-					</button>
-					<div class="d-inline-block dropdown">
-					</div>
-				</div>    
-			</div>
-		</div> 
+		
 		<div class="row">
 			<div class="col-md-12">
 				<div class="card">
@@ -91,7 +70,5 @@
 				</div>
 			</div>
 		</div>
-		
-	</div>    
-</div>
+
 @endsection
