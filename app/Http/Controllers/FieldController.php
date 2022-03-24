@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Market;
+use App\Models\Field;
 use Illuminate\Http\Request;
 
-class MarketController extends Controller
+class FieldController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class MarketController extends Controller
      */
     public function index()
     {
-        return view('crops.market');
+        //
     }
 
     /**
@@ -27,10 +27,6 @@ class MarketController extends Controller
         //
     }
 
-    public function marketdetails()
-    {
-        return view('crops.marketdetails');
-    }
     /**
      * Store a newly created resource in storage.
      *
@@ -39,22 +35,16 @@ class MarketController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required',
-            'phone' => 'required | unique:farmer',
-            'crop' => 'required'        ]);
-
-        Market::create($request->all());
-        return redirect('market')->with('success', 'Added Successfully');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Market  $market
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function show(Market $market)
+    public function show(Field $field)
     {
         //
     }
@@ -62,10 +52,10 @@ class MarketController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Market  $market
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function edit(Market $market)
+    public function edit(Field $field)
     {
         //
     }
@@ -74,10 +64,10 @@ class MarketController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Market  $market
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Market $market)
+    public function update(Request $request, Field $field)
     {
         //
     }
@@ -85,10 +75,10 @@ class MarketController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Market  $market
+     * @param  \App\Models\Field  $field
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Market $market)
+    public function destroy(Field $field)
     {
         //
     }

@@ -38,9 +38,10 @@
                             </div>
                            <div class="page-title-actions">
                                 <div class="d-inline-block dropdown">
+                                    <a href="{{ route('admins.home') }}" type="button" class="btn btn-success" class=""><i class="fa fa-home"></i> Home</a>
                                         <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn-shadow dropdown-toggle btn btn-info">
                                             <span class="btn-icon-wrapper pr-2 opacity-7">
-                                                <i class="fa fa-business-time fa-w-20"></i>
+                                                <i class="fas fa-business-time"></i>
                                             </span>
                                             Options
                                         </button>
@@ -51,6 +52,14 @@
                                                         <i class="nav-link-icon lnr-inbox"></i>
                                                         <span>
                                                             Register Farmers
+                                                        </span>
+                                                    </a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a href="{{ route('admins.register-farms') }}" class="nav-link">
+                                                        <i class="nav-link-icon lnr-inbox"></i>
+                                                        <span>
+                                                            Register Fields
                                                         </span>
                                                     </a>
                                                 </li>

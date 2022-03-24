@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\DiseasesController;
 use App\Http\Controllers\MarketController;
+use App\Http\Controllers\FarmerController;
+use App\Http\Controllers\FieldController;
 use App\Http\Controllers\PestsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServicesController;
@@ -79,6 +81,8 @@ Route::view('/home', 'admins.home')->name('home');
 Route::post('logout', [AdminsController::class, 'logout'])->name('logout');
 Route::view('register-crop', 'admins.register-crop')->name('register-crop');
 Route::view('register-farmer', 'admins.register-farmer')->name('register-farmer');
+Route::get('register-farms', [FarmerController::class, 'registerfarms'])->name('register-farms');
+Route::get('previewfarmer/{id}', [FarmerController::class, 'previewfarmer'])->name('previewfarmer');
 });
 });
 Route::prefix('superuser')->name('superusers.')->group(function(){
@@ -118,3 +122,6 @@ Route::post('create_service', [ServicesController::class, 'create_service'])->na
 Route::resource('/market', MarketController::class, [
     'only' => ['index', 'store']
 ]);
+Route::put('updatefarmer/{id}', [FarmerController::class, 'updatefarmer'])->name('updatefarmer');
+Route::resource('farmers', FarmerController::class);
+Route::resource('fields', FieldController::class);

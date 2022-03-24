@@ -16,8 +16,12 @@ class CreateFarmersTable extends Migration
         Schema::create('farmers', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->nullable();
-            $table->string('phone')->unique();
+            $table->string('gender');
+            $table->string('age');
+            $table->string('education');
+            $table->string('phone');
+            $table->string('location');
+            $table->string('fperiod');
             $table->timestamps();
         });
     }
