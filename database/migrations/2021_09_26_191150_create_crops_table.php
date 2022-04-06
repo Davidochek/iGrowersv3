@@ -15,8 +15,19 @@ class CreateCropsTable extends Migration
     {
         Schema::create('crops', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->string('image')->nullable();
+            $table->string('crop');
+            $table->string('season');
+            $table->integer('field_id');
+            $table->string('avocodvariety');
+            $table->string('dateplanted');
+            $table->integer('nooftrees');
+            $table->integer('certifiedtrees');
+            $table->string('beansvariety');
+            $table->string('expectedharvestdate');
+            $table->string('expectedvolume');
+            $table->string('previouscrop');
             $table->timestamps();
         });
     }

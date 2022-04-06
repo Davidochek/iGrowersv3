@@ -1,332 +1,180 @@
 @extends('layouts.admins')
 @section('content')
-                                
-                    <div class="row">
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-midnight-bloom">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Total Orders</div>
-                                        <div class="widget-subheading"></div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span>1896</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-arielle-smile">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Farmers</div>
-                                        <div class="widget-subheading"></div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span> 568</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-grow-early">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Farmer Groups</div>
-                                        <div class="widget-subheading"></div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <div class="widget-numbers text-white"><span>46</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-xl-none d-lg-block col-md-6 col-xl-4">
-                            <div class="card mb-3 widget-content bg-premium-dark">
-                                <div class="widget-content-wrapper text-white">
-                                    <div class="widget-content-left">
-                                        <div class="widget-heading">Products Sold</div>
-                                        <div class="widget-subheading">Revenue streams</div>
-                                    </div>
-                                    <div class="widget-content-right">
-                                        <div class="widget-numbers text-warning"><span>$14M</span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6">
-                            <div class="mb-3 card">
-                                <div class="card-header-tab card-header-tab-animation card-header">
-                                    <div class="card-header-title">
-                                        <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
-                                        Sales Report
-                                    </div>
-                                    <ul class="nav">
-                                        <li class="nav-item"><a href="javascript:void(0);" class="active nav-link">Last</a></li>
-                                        <li class="nav-item"><a href="javascript:void(0);" class="nav-link second-tab-toggle">Current</a></li>
-                                    </ul>
-                                </div>
-                                <div class="card-body">
-                                    <div class="tab-content">
-                                        <div class="tab-pane fade show active" id="tabs-eg-77">
-                                            <div class="card mb-3 widget-chart widget-chart2 text-left w-100">
-                                                <div class="widget-chat-wrapper-outer">
-                                                    <div class="widget-chart-wrapper widget-chart-wrapper-lg opacity-10 m-0">
-                                                        <canvas id="canvas"></canvas>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="mb-3 card">
-                                <div class="card-header-tab card-header">
-                                    <div class="card-header-title">
-                                        <i class="header-icon lnr-rocket icon-gradient bg-tempting-azure"> </i>
-                                         Reports
-                                    </div>
-                                    <div class="btn-actions-pane-right">
-                                        <div class="nav">
-                                            <a href="javascript:void(0);" class="border-0 btn-pill btn-wide btn-transition active btn btn-outline-alternate">Tab 1</a>
-                                            <a href="javascript:void(0);" class="ml-1 btn-pill btn-wide border-0 btn-transition  btn btn-outline-alternate second-tab-toggle-alt">Tab 2</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade active show" id="tab-eg-55">
-                                        <div class="widget-chart p-3">
-                                            <div style="height: 350px">
-                                                <canvas id="line-chart"></canvas>
-                                            </div>
-                                            <div class="widget-chart-content text-center mt-5">
-                                                <div class="widget-description mt-0 text-warning">
-                                                    <i class="fa fa-arrow-left"></i>
-                                                    <span class="pl-1">175.5%</span>
-                                                    <span class="text-muted opacity-8 pl-1">increased server resources</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="pt-2 card-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="widget-content">
-                                                        <div class="widget-content-outer">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-numbers fsize-3 text-muted">63%</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <div class="text-muted opacity-6">Generated Leads</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-progress-wrapper mt-1">
-                                                                <div class="progress-bar-sm progress-bar-animated-alt progress">
-                                                                    <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width: 63%;"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="widget-content">
-                                                        <div class="widget-content-outer">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-numbers fsize-3 text-muted">32%</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <div class="text-muted opacity-6">Submitted Tickers</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-progress-wrapper mt-1">
-                                                                <div class="progress-bar-sm progress-bar-animated-alt progress">
-                                                                    <div class="progress-bar bg-success" role="progressbar" aria-valuenow="32" aria-valuemin="0" aria-valuemax="100" style="width: 32%;"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="widget-content">
-                                                        <div class="widget-content-outer">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-numbers fsize-3 text-muted">71%</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <div class="text-muted opacity-6">Server Allocation</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-progress-wrapper mt-1">
-                                                                <div class="progress-bar-sm progress-bar-animated-alt progress">
-                                                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="71" aria-valuemin="0" aria-valuemax="100" style="width: 71%;"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="widget-content">
-                                                        <div class="widget-content-outer">
-                                                            <div class="widget-content-wrapper">
-                                                                <div class="widget-content-left">
-                                                                    <div class="widget-numbers fsize-3 text-muted">41%</div>
-                                                                </div>
-                                                                <div class="widget-content-right">
-                                                                    <div class="text-muted opacity-6">Generated Leads</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-progress-wrapper mt-1">
-                                                                <div class="progress-bar-sm progress-bar-animated-alt progress">
-                                                                    <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="41" aria-valuemin="0" aria-valuemax="100" style="width: 41%;"></div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="main-card mb-3 card">
-                                <div class="card-header">Market Orders
-                                    <div class="btn-actions-pane-right">
-                                        <div role="group" class="btn-group-sm btn-group">
-                                            <button class="active btn btn-focus">Last Week</button>
-                                            <button class="btn btn-focus">All Month</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="table-responsive">
-                                    <table class="align-middle mb-0 table table-borderless table-striped table-hover">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">#</th>
-                                                <th>Name</th>
-                                                <th class="text-center">City</th>
-                                                <th class="text-center">Status</th>
-                                                <th class="text-center">Actions</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center text-muted">#345</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="{{ asset('assets2/images/avatars/4.jpg') }}" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">John Doe</div>
-                                                                <div class="widget-subheading opacity-7">Web Developer</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">Madrid</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-warning">Pending</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-1" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center text-muted">#347</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="{{ asset('assets2/images/avatars/3.jpg') }}" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Ruben Tillman</div>
-                                                                <div class="widget-subheading opacity-7">Etiam sit amet orci eget</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">Berlin</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-success">Completed</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-2" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center text-muted">#321</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="{{ asset('assets2/images/avatars/2.jpg') }}" alt="">
-                                                                </div>
-                                                            </div>
-                                                            <div class="widget-content-left flex2">
-                                                                <div class="widget-heading">Elliot Huber</div>
-                                                                <div class="widget-subheading opacity-7">Lorem ipsum dolor sic</div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                                <td class="text-center">London</td>
-                                                <td class="text-center">
-                                                    <div class="badge badge-danger">In Progress</div>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button type="button" id="PopoverCustomT-3" class="btn btn-primary btn-sm">Details</button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center text-muted">#55</td>
-                                                <td>
-                                                    <div class="widget-content p-0">
-                                                        <div class="widget-content-wrapper">
-                                                            <div class="widget-content-left mr-3">
-                                                                <div class="widget-content-left">
-                                                                    <img width="40" class="rounded-circle" src="{{ asset('assets2/images/avatars/1.jpg') }}" alt=""></div>
-                                                                </div>
-                                                                <div class="widget-content-left flex2">
-                                                                    <div class="widget-heading">Vinnie Wagstaff</div>
-                                                                    <div class="widget-subheading opacity-7">UI Designer</div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="text-center">Amsterdam</td>
-                                                    <td class="text-center">
-                                                        <div class="badge badge-info">On Hold</div>
-                                                    </td>
-                                                    <td class="text-center">
-                                                        <button type="button" id="PopoverCustomT-4" class="btn btn-primary btn-sm">Details</button>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="d-block text-center card-footer">
-                                        <button class="mr-2 btn-icon btn-icon-only btn btn-outline-danger"><i class="pe-7s-trash btn-icon-wrapper"> </i></button>
-                                        <button class="btn-wide btn btn-success">Save</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                   
+
+<div class="row">
+    <div class="col-md-6 col-xl-4">
+        <div class="card mb-3 widget-content bg-midnight-bloom">
+            <div class="widget-content-wrapper text-white">
+                <div class="widget-content-left">
+                    <div class="widget-heading">Total Orders</div>
+                    <div class="widget-subheading"></div>
+                </div>
+                <div class="widget-content-right">
+                    <div class="widget-numbers text-white"><span>1896</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4">
+        <div class="card mb-3 widget-content bg-arielle-smile">
+            <div class="widget-content-wrapper text-white">
+                <div class="widget-content-left">
+                    <div class="widget-heading">Farmers</div>
+                    <div class="widget-subheading"></div>
+                </div>
+                <div class="widget-content-right">
+                    <div class="widget-numbers text-white"><span> {{$farmers->count()}}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 col-xl-4">
+        <div class="card mb-3 widget-content bg-grow-early">
+            <div class="widget-content-wrapper text-white">
+                <div class="widget-content-left">
+                    <div class="widget-heading">Farmer Groups</div>
+                    <div class="widget-subheading"></div>
+                </div>
+                <div class="widget-content-right">
+                    <div class="widget-numbers text-white"><span>46</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class=" col-md-4">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Chart Style
+                </div>
+            </div>
+            <div class="card-body">
+                 {{-- <label>Select Chart Style</label>
+             <select name="chart" onchange="myFunction()" class="form-control" id="chart" style="width:120px;">
+                <option value="pie">Pie</option>
+                <option value="column" selected>Column</option>
+                <option value="pyramid">Pyramid</option>
+                <option value="bar">Bar</option>
+            </select> --}}
+               <div class="row">
+         <div class="col-md-5">
+             <label>Select Chart Style</label>
+         </div>
+         <div class="col-md-7" >
+             <select name="chart" onchange="myFunction()" class="form-control" id="chart" style="width:120px;">
+                <option value="pie">Pie</option>
+                <option value="column" selected>Column</option>
+                <option value="pyramid">Pyramid</option>
+                <option value="bar">Bar</option>
+            </select>
+        </div>
+    </div>
+           </div>
+       </div>
+   </div>
+   <div class=" col-md-8">
+        <div class="mb-3 card">
+            <div class="card-header-tab card-header-tab-animation card-header">
+                <div class="card-header-title">
+                    <i class="header-icon lnr-apartment icon-gradient bg-love-kiss"> </i>
+                    Chart
+                </div>
+            </div>
+            <div class="card-body">
+               {{-- <canvas id="canvas" height="280" width="600"></canvas> --}}
+               <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+           </div>
+       </div>
+   </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="main-card mb-3 card">
+            <div class="card-header">Registered Farmers
+            </div>
+            <div class="table-responsive">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>Name</th>
+                            <th class="text-center">Location</th>
+                            <th class="text-center">Farming Period</th>
+                            <th class="text-center">No. Fields</th>
+                            <th class="text-center">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       @foreach ($farmers as $farmer)
+                       <tr>
+                           <td>{{$farmer->id}}</td>
+                           <td>{{$farmer->name}}</td>
+                           <td>{{$farmer->location}}</td>
+                           <td>{{$farmer->fperiod}}</td>
+                           <td>2</td>
+                           <td><button class="btn btn-success">Details</button></td>
+                       </tr>
+                       @endforeach
+                   </tbody>
+               </table>
+           </div>
+       </div>
+   </div>
+</div>
+
 @endsection
+@push('scripts')
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script>
+ $(document).ready(function($) {
+  var chartType = document.getElementById("chart").value;
+
+  var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    title: {
+        text: "Expected Crops Harvest"
+    },
+    subtitles: [{
+        text: "Harvest in KGs"
+    }],
+    data: [{
+        type:chartType, //"column",  type: "pie",
+        yValueFormatString: "#,##0.\"\"",
+        indexLabel: "{label} ({y})",
+        dataPoints: <?php echo json_encode($data, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+  chart.render(); 
+});
+
+ function myFunction() 
+ {
+  var chartType = document.getElementById("chart").value;
+
+  var chart = new CanvasJS.Chart("chartContainer", {
+    animationEnabled: true,
+    title: {
+        text: "Expected Crops Harvest"
+    },
+    subtitles: [{
+        text: "Harvest in KGs"
+    }],
+    data: [{
+        type:chartType, //"column",  type: "pie",
+        yValueFormatString: "#,##0.\"\"",
+        indexLabel: "{label} ({y})",
+        dataPoints: <?php echo json_encode($data, JSON_NUMERIC_CHECK); ?>
+    }]
+});
+  chart.render();
+}
+
+// window.onload = function() {
+
+
+// }
+</script>
+@endpush

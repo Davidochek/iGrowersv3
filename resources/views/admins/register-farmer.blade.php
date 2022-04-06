@@ -189,7 +189,7 @@
 				<!-- /.form-group -->
 
 				<div class="form-group">
-					<label>Farm Blocks</label>
+					<label>Farm Fields</label>
 					<select class="form-control select2" name="farmblocksno" style="width: 100%;">
 						<option selected="true" disabled="disabled">Select one</option> 
 						<option>1</option>

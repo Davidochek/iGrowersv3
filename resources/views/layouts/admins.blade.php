@@ -67,15 +67,15 @@
                                                     <a href="{{ route('admins.register-crop') }}" class="nav-link">
                                                         <i class="nav-link-icon lnr-book"></i>
                                                         <span>
-                                                            Register Crops
+                                                            Register Season
                                                         </span>
                                                     </a>
                                                 </li>
                                                 <li class="nav-item">
-                                                    <a href="javascript:void(0);" class="nav-link">
+                                                    <a href="{{ route('admins.add-harvest') }}" class="nav-link">
                                                         <i class="nav-link-icon lnr-picture"></i>
                                                         <span>
-                                                            Order Details
+                                                            Crop Harvesting
                                                         </span>
                                                     </a>
                                                 </li>

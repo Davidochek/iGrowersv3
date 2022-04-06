@@ -38,8 +38,8 @@
 						<option disabled="disabled" selected="true">Select one</option>
 						@foreach ($farmers as $farmer)
 						<option value="{{$farmer->id}}">{{$farmer->name}}</option>
-					</select>
 						@endforeach
+					</select>
 
 
 				</div>
@@ -89,118 +89,13 @@
 					</select>
 				</div>
 				<!-- /.form-group -->
-				<div class="form-group clearfix">
-					<label>Homestead Included</label>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" value="Yes" name="fwithhomestead"  id="fwithhomestead"> &nbsp;&nbsp;&nbsp;
-						<label class="form-check-label" for="fwithhomestead">
-							Yes
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" value="No" name="fwithhomestead"  id="fwithhomestead"> &nbsp;&nbsp;&nbsp;
-						<label class="form-check-label" for="fwithhomestead">
-							No
-						</label>
-					</div>
-				</div>
-				<!-- /.form-group -->
-
 				<div class="form-group">
-					<label>What Animals</label>
-					<select class="form-control select2" name="farmanimals" id="farmanimals" style="width: 100%;">
-						<option selected="true" disabled="disabled">Select one</option> 
-						<option>Dairy Cows</option>
-						<option>Goats</option>
-						<option>Beef Cattle</option>
-						<option>Other</option>
-					</select>
-				</div>
+					<label>Field Name</label>
+					<input type="text" class="form-control" id="fieldname" id="fieldname">				</div>
 				<!-- /.form-group -->
-				<div class="form-group clearfix">
-					<label>Farm Blocks</label>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" value="Yes" name="farmblocks" id="farmblocks" id="farmblocks1"> &nbsp;&nbsp;&nbsp;
-						<label class="form-check-label" for="farmblocks1">
-							Yes
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" value="No" name="farmblocks" id="farmblocks" id="farmblocks2"> &nbsp;&nbsp;&nbsp;
-						<label class="form-check-label" for="farmblocks2">
-							No
-						</label>
-					</div>
-				</div>
-				<!-- /.form-group -->
-
-				<div class="form-group">
-					<label>Farm Blocks</label>
-					<select class="form-control select2" name="farmblocksno" id="farmblocksno" style="width: 100%;">
-						<option selected="true" disabled="disabled">Select one</option> 
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-						<option>5</option>
-						<option>6</option>
-						<option>7</option>
-					</select>
-				</div>
-				<!-- /.form-group -->
-				<div class="form-group clearfix">
-					<label>Certifications</label>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" value="Yes"  name="farmcertifications" id="farmcertifications"> &nbsp;&nbsp;&nbsp;
-						<label class="form-check-label" for="farmcertifications">
-							Yes
-						</label>
-					</div>
-					<div class="form-check">
-						<input class="form-check-input" type="radio" value="No" value="No" name="farmcertifications" id="farmcertifications"> &nbsp;&nbsp;&nbsp;
-						<label class="form-check-label" for="farmcertifications">
-							No
-						</label>
-					</div>
-				</div>
-				<!-- /.form-group -->
-
 			</div>
 			<!-- /.col -->
 			<div class="col-md-6">
-				<div class="form-group">
-					<label>Farm Ownership</label>
-					<select class="form-control select2" name="farmownership" id="farmownership" style="width: 100%;">
-						<option selected="true" disabled="disabled">Select one</option> 
-						<option>Family</option>
-						<option>Spouse</option>
-						<option>Parents</option>
-						<option>Lease</option>
-					</select>
-				</div>
-				<!-- /.form-group -->
-
-				<div class="form-group">
-					<label>Animals on the Farm</label>
-					<select type="text" name="farmanimalsno" id="farmanimalsno" class="form-control select2">
-						<option selected="true" disabled="disabled">Select one</option> 
-						<option value="Yes">Yes</option>
-						<option value="No">No</option>
-					</select>
-				</div>
-				<!-- /.form-group -->
-				<div class="form-group">
-					<label>Means of Transport</label>
-					<select class="form-control select2" name="farmtransport" id="farmtransport" style="width: 100%;">
-						<option selected="true" disabled="disabled">Select one</option> 
-						<option value="Foot">Foot</option>
-						<option value="Bicycle">Bicycle</option>
-						<option value="Motocycle">Motocycle</option>
-						<option value="Vehicles">Vehicles</option>
-						<option value="Pickup">Pickup</option>
-					</select>
-				</div>
-				<!-- /.form-group -->
 				<div class="form-group">
 					<label>Main Crop</label>
 					<select class="form-control select2" type="text" name="fmaincrop" id="fmaincrop">
@@ -280,6 +175,8 @@ $(document).on('click', '#update_field', function($id){
 			document.getElementById("cform").reset();
 			$('#successmessage').addClass('alert alert-success');
 			$('#successmessage').text(response.success);
+			$("html, body").animate({ scrollTop: 0 }, "slow");
+ 				 return false;
 		}
 	})
 });

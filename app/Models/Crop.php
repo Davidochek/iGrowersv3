@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Crop extends Model
 {
     use HasFactory;
+    protected $table = 'crop';
+    protected  $fillable = [
+     'crop', 'season', 'field_id', 'avocodvariety', 'dateplanted', 'nooftrees', 'certifiedtrees', 'beansvariety', 'expectedharvestdate', 'expectedvolume', 'previouscrop',
+    ];
      public function pests()
     {
         return $this->belongsToMany(Pests::class);
@@ -21,5 +25,8 @@ class Crop extends Model
      public function diseases()
     {
         return $this->belongsToMany(Diseases::class);
+    }
+    public function fields() {
+        return $this->belongsTo(Field::class);
     }
 }

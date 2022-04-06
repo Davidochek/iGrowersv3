@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Crop;
 use App\Models\Farmer;
 use Illuminate\Http\Request;
+use DB;
 
 class FarmerController extends Controller
 {
@@ -24,13 +26,46 @@ class FarmerController extends Controller
 
     }
 
+     public function registercrops()
+    {
+        $farmers = Farmer::with('fields')->get();
+        return view('admins.register-crop', compact('farmers'));
+
+    }
+
       public function previewfarmer($id)
     {
-        $farmer = Farmer::find($id);
+        $farmer = Farmer::with('fields')->find($id);
         return $farmer;
 
     }
 
+        public function addharvest()
+    {
+        $crops = Crop::with('fields')->get();
+        return view('admins.add-harvest', compact('crops'));
+
+    }
+
+    public function chart(){
+        $farmers = Farmer::with('fields')->get();
+        $post = DB::table('crop')->get('*')->toArray();
+      foreach($post as $row)
+       {
+          $data[] = array
+           (
+            'label'=>$row->crop,
+            'y'=>$row->expectedvolume
+           ); 
+       }
+      // return view('statics',['data' => $data]);
+        return view('admins.home', ['data' => $data, 'farmers' => $farmers]);
+    }
+
+    // public function farmerinfo(){
+    //     $farmers = Farmer::with('fields')->get()
+    //     return view('admins.home', compact('farmers'))
+    // }
 
       public function updatefarmer(Request $request, $id)
     {

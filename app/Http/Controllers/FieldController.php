@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Crop;
 use App\Models\Field;
+use Validator;
 use Illuminate\Http\Request;
 
 class FieldController extends Controller
@@ -35,7 +37,23 @@ class FieldController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'fields' => 'required',
+            'name' => 'required',
+            'season' => 'required',
+            'crop' => 'required',
+        ]);
+     
+        if ($validator->passes()) {
+            $crop = Crop::create($request->all());
+         return response()->json(['success'=>'Crop is successfully added']);
+        }
+     
+        return response()->json(['error'=>$validator->errors()->all()]);
+
+
+        // $crop = Crop::create($request->all());
+        //  return response()->json(['success'=>'Crop is successfully added']);
     }
 
     /**

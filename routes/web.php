@@ -77,11 +77,15 @@ Route::post('/create', [AdminsController::class, 'create'])->name('create');
 Route::post('/check', [AdminsController::class, 'check'])->name('check');
 });
 Route::middleware(['auth:admin', 'PreventBackHistory'])->group(function(){
-Route::view('/home', 'admins.home')->name('home');
+// Route::view('/home', 'admins.home')->name('home');
+	Route::get('/home', [FarmerController::class, 'chart'])->name('home');
+	// Route::get('/home', [FarmerController::class, 'farmerinfo'])->name('home');
 Route::post('logout', [AdminsController::class, 'logout'])->name('logout');
-Route::view('register-crop', 'admins.register-crop')->name('register-crop');
+// Route::view('register-crop', 'admins.register-crop')->name('register-crop');
 Route::view('register-farmer', 'admins.register-farmer')->name('register-farmer');
+Route::get('register-crop', [FarmerController::class, 'registercrops'])->name('register-crop');
 Route::get('register-farms', [FarmerController::class, 'registerfarms'])->name('register-farms');
+Route::get('add-harvest', [FarmerController::class, 'addharvest'])->name('add-harvest');
 Route::get('previewfarmer/{id}', [FarmerController::class, 'previewfarmer'])->name('previewfarmer');
 });
 });
