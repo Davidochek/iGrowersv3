@@ -1,13 +1,11 @@
 @extends('layouts.admins')
 @section('content')
 
-<div class="row">
-    <div class="col-md-12">
         <div class="main-card mb-3 card">
             <div class="card-header">Registered Crops
             </div>
             <div class="table-responsive">
-                <table class="align-middle mb-0 table table-borderless table-striped table-hover">
+                <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="cropstable">
                     <thead>
                         <tr>
                             <th class="text-center">#</th>
@@ -33,6 +31,10 @@
                </table>
            </div>
        </div>
-   </div>
-</div>
+  
 @endsection
+@push('scripts')
+  <script>
+   
+  </script>
+@endpush

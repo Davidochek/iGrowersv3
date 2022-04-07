@@ -10,7 +10,7 @@ class Crop extends Model
     use HasFactory;
     protected $table = 'crop';
     protected  $fillable = [
-     'crop', 'season', 'field_id', 'avocodvariety', 'dateplanted', 'nooftrees', 'certifiedtrees', 'beansvariety', 'expectedharvestdate', 'expectedvolume', 'previouscrop',
+     'crop', 'season', 'field_id', 'avocodvariety', 'dateplanted', 'nooftrees', 'certifiedtrees', 'beansvariety', 'expectedharvestdate', 'expectedvolume', 'previouscrop', 'quantityplanted',
     ];
      public function pests()
     {

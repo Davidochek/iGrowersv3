@@ -22,6 +22,14 @@ class CreateFarmersTable extends Migration
             $table->string('phone');
             $table->string('location');
             $table->string('fperiod');
+            $table->string('farmsize');
+            $table->string('fwithhomestead');
+            $table->string('farmanimals');
+            $table->string('farmblocks');
+            $table->string('farmblocksno');
+            $table->string('farmcertifications');
+            $table->string('farmownership');
+            $table->string('farmtransport');
             $table->timestamps();
         });
     }

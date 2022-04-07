@@ -16,14 +16,8 @@ class CreateFieldsTable extends Migration
         Schema::create('fields', function (Blueprint $table) {
             $table->id();
             $table->integer('farmer_id');
+            $table->string('farmname');
             $table->string('farmsize');
-            $table->string('fwithhomestead');
-            $table->string('farmanimals');
-            $table->string('farmblocks');
-            $table->string('farmblocksno');
-            $table->string('farmcertifications');
-            $table->string('farmownership');
-            $table->string('farmtransport');
             $table->string('fmaincrop');
             $table->string('fothercrop');
             $table->timestamps();

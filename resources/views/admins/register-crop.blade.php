@@ -46,9 +46,9 @@
 						<label>Season of the Year</label>
 						<select name="season" id="season" class="form-control select2">
 							<option selected="true" disabled="disabled">Select One</option>
-							<option>Jan-April</option>
-							<option>April-August</option>
-							<option>August-December</option>
+							<option value="Jan-June">First Part(Year)</option>
+							<option value="July-December">Second Part(Year)</option>
+							<option value="">No Season</option>
 						</select>
 					</div>
 					<!-- /.form-group -->
@@ -89,11 +89,6 @@
 					</div>
 
 					<div class="form-group">
-						<label>Date Planted</label>
-						<input type="date" name="dateplanted" id="dateplanted" class="form-control">
-					</div>
-					<!-- /.form-group -->
-					<div class="form-group">
 						<label>Number of Trees</label>
 						<input type="number" name="nooftrees" id="nooftrees" class="form-control">
 					</div>
@@ -101,6 +96,11 @@
 					<div class="form-group">
 						<label>Certified Trees</label>
 						<input type="number" name="certifiedtrees" id="certifiedtrees" class="form-control">
+					</div>
+					<!-- /.form-group -->
+					<div class="form-group">
+						<label>Date Planted</label>
+						<input type="date" name="dateplanted" id="dateplanted" class="form-control">
 					</div>
 					<!-- /.form-group -->
 
@@ -113,8 +113,8 @@
 						<input type="text" name="beansvariety" id="beansvariety" class="form-control">
 					</div>
 					<div class="form-group">
-						<label>Expected Harvest date</label>
-						<input type="date" name="expectedharvestdate" id="expectedharvestdate" class="form-control">
+						<label>Quantity Planted(Beans)</label>
+						<input type="text" name="quantityplanted" id="quantityplanted" class="form-control">
 					</div>
 					<!-- /.form-group -->
 
@@ -127,6 +127,11 @@
 					<div class="form-group">
 						<label>Crop in Previous Season</label>
 						<input type="text" name="previouscrop" id="previouscrop" class="form-control">
+					</div>
+					<!-- /.form-group -->
+					<div class="form-group">
+						<label>Expected Harvest date</label>
+						<input type="date" name="expectedharvestdate" id="expectedharvestdate" class="form-control">
 					</div>
 					<!-- /.form-group -->
 
@@ -166,7 +171,7 @@
 			$.each(data.fields, function (index, val) {
 				$('#fields').append($('<option>', { 
 					value: val.id,
-					text : val.farmsize 
+					text : val.fieldname 
 				}));
 			});
 

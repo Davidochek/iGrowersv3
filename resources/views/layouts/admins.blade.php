@@ -133,8 +133,9 @@
         <script>
             $(document).ready(function () {
                 $('#dataTables-example').dataTable();
+                $('#cropstable').dataTable();
             });
-    </script>
+                </script>
      @stack('scripts')
 	</body>
 	</html>

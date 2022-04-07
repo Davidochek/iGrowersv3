@@ -73,18 +73,10 @@ class FarmerController extends Controller
         $farmer = Farmer::find($id);
         $farmer->fields()->create([
         'farmer_id' => $id,
+        'fieldname' => $request['fieldname'],
         'farmsize' => $request['farmsize'],
-        'fwithhomestead' => $request['fwithhomestead'],
-        'farmanimals' => $request['farmanimals'],
-        'farmblocks' => $request['farmblocks'],
-        'farmblocks' => $request['farmblocks'],
-        'farmblocksno' => $request['farmblocksno'],
-        'farmcertifications' => $request['farmcertifications'],
-        'farmownership' => $request['farmownership'],
-        'farmanimalsno' => $request['farmanimalsno'],
         'fmaincrop' => $request['fmaincrop'],
-        'fothercrop' => $request['fothercrop'],
-        'farmtransport' => $request['farmtransport'],        
+        'fothercrop' => $request['fothercrop'],      
        ]);
         return response()->json(['success'=>'Field is successfully added']);
         
@@ -109,8 +101,9 @@ class FarmerController extends Controller
      */
     public function store(Request $request)
     {
+        // $farmer = $request->all();
+        // dd($farmer);
        $farmer =  Farmer::create($request->all());
-       $farmer->fields()->create($request->all());
         return redirect('admin/register-farmer')->with('success', 'Saved Successfully');
     }
 

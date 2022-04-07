@@ -9,7 +9,7 @@ class Farmer extends Model
 {
     use HasFactory;
 
-     protected $fillable = [ 'name', 'gender', 'age', 'education', 'phone', 'location', 'fperiod',
+     protected $fillable = [ 'name', 'gender', 'age', 'education', 'phone', 'location', 'fperiod', 'farmsize', 'fwithhomestead', 'farmanimals', 'farmblocks', 'farmblocksno', 'farmcertifications', 'farmownership', 'farmanimalsno', 'farmtransport', 'fmaincrop', 'fothercrop'
     ];
 
     public function fields(){

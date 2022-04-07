@@ -9,7 +9,7 @@ class Field extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'farmsize', 'fwithhomestead', 'farmanimals', 'farmblocks', 'farmblocksno', 'farmcertifications', 'farmownership', 'farmtransport', 'fmaincrop', 'fothercrop',
+    protected $fillable = [ 'fieldname', 'farmsize', 'fmaincrop', 'fothercrop',
     ];
     public function farmers(){
     	return $this->belongsTo(Farmer::class);

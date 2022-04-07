@@ -38,10 +38,10 @@ class FieldController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'fields' => 'required',
-            'name' => 'required',
-            'season' => 'required',
             'crop' => 'required',
+            'season' => 'required',
+            'dateplanted' => 'required',
+            'expectedharvestdate' => 'required',
         ]);
      
         if ($validator->passes()) {

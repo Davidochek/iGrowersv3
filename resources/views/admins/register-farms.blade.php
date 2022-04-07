@@ -4,7 +4,7 @@
 <!-- SELECT2 EXAMPLE -->
 <div class="card card-default">
 	<div class="card-header">
-		<h3 class="card-title">Register Farmer</h3>
+		<h3 class="card-title">Register Field</h3>
 	</div>
 	<!-- /.card-header -->
 	<div class="card-body">
@@ -76,6 +76,11 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="form-group">
+					<label>Field Name</label>
+					<input type="text" class="form-control" id="fieldname" id="fieldname">			
+				</div>
+				<!-- /.form-group -->
+				<div class="form-group">
 					<label>Size</label>
 					<select class="form-control select2" name="farmsize" id="farmsize" style="width: 100%;">
 						<option selected="true" disabled="disabled">Select one</option> 
@@ -88,10 +93,6 @@
 						<option value="30-100 ">Over 30 acres</option>
 					</select>
 				</div>
-				<!-- /.form-group -->
-				<div class="form-group">
-					<label>Field Name</label>
-					<input type="text" class="form-control" id="fieldname" id="fieldname">				</div>
 				<!-- /.form-group -->
 			</div>
 			<!-- /.col -->
@@ -142,6 +143,7 @@ $('#select2').change(function(){
 			// console.log(data.phone);
 			$('#fid').val(data.id);
 			$('#phone').val(data.phone);
+			$('#fmaincrop').val(data.fmaincrop);
 		},
   error: function(error){
    alert('error')
@@ -159,16 +161,8 @@ $(document).on('click', '#update_field', function($id){
       '_token' : $('input[name = _token]').val(),
       'id': id,
 'farmsize' :$('#farmsize').val(),
-'fwithhomestead' :$('#fwithhomestead').val(),
-'farmanimals' :$('#farmanimals').val(),
-'farmblocks' :$('#farmblocks').val(),
-'farmblocks' :$('#farmblocks').val(),
-'farmblocksno' :$('#farmblocksno').val(),
-'farmcertifications' :$('#farmcertifications').val(),
-'farmownership' :$('#farmownership').val(),
-'farmanimalsno' :$('#farmanimalsno').val(),
+'fieldname' :$('#fieldname').val(),
 'fmaincrop' :$('#fmaincrop').val(),
-'farmtransport' :$('#farmtransport').val(),
 'fothercrop' :$('#fothercrop').val(),
 		},
 		success:function(response){
