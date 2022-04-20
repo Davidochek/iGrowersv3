@@ -47,7 +47,10 @@
                             </div>
                         </div>
                         <div class="portfolioContainer" style="margin-top: -50px;">
-                            <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
+                            <div class="col-xs-6 col-sm-4 col-md-1 hsgrids"
+                                style="padding-right: 5px;padding-left: 5px;">
+                            </div>
+                                <div class="col-xs-6 col-sm-4 col-md-2 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
                                 <a class="g-list" href="{{ route('pests') }}">
                                     <div class="img-hover">
@@ -60,7 +63,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
+                            <div class="col-xs-6 col-sm-4 col-md-2 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
                                 <a class="g-list" href="{{ route('diseases') }}">
                                     <div class="img-hover">
@@ -73,9 +76,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
+                            <div class="col-xs-6 col-sm-4 col-md-2 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
-                                <a class="g-list" href="https://pro.agrio.app/home/fields">
+                                <a class="g-list" href="{{ route('services.index') }}">
                                     <div class="img-hover">
                                         <img src="{{asset('assets/img/crops/services.jpg')}}" alt="AC Gas Top Up"
                                             class="img-responsive">
@@ -86,7 +89,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xs-6 col-sm-4 col-md-3 hsgrids"
+                            <div class="col-xs-6 col-sm-4 col-md-2 hsgrids"
                                 style="padding-right: 5px;padding-left: 5px;">
                                 <a class="g-list" href="{{ route('market.index') }}">
                                     <div class="img-hover">
@@ -95,6 +98,19 @@
                                     </div>
                                     <div class="info-gallery">
                                         <h3>Become a Member</h3>
+                                        <hr class="separator">
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xs-6 col-sm-4 col-md-2 hsgrids"
+                                style="padding-right: 5px;padding-left: 5px;">
+                                <a class="g-list" href="https://pro.agrio.app/home/fields">
+                                    <div class="img-hover">
+                                        <img src="{{asset('assets/img/crops/climate-smart.jpg')}}" alt="AC Gas Top Up"
+                                            class="img-responsive">
+                                    </div>
+                                    <div class="info-gallery">
+                                        <h3>Climate Smart Services</h3>
                                         <hr class="separator">
                                     </div>
                                 </a>

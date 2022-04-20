@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Pests;
 use App\Models\Pesticide;
 use App\Models\Crop;
+use DB;
 use Illuminate\Http\Request;
 
 class PestsController extends Controller
@@ -16,7 +17,8 @@ class PestsController extends Controller
      */
     public function index()
     {
-        $crops = Crop::with('pesticides')->get();
+        // $crops = Crop::with('pesticides')->get();
+        $crops = DB::table('crops')->get();
         return view('crops.pests', compact('crops'));
     }
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Diseases;
 use App\Models\Crop;
+use DB;
 use Illuminate\Http\Request;
 
 class DiseasesController extends Controller
@@ -15,7 +16,8 @@ class DiseasesController extends Controller
      */
     public function index()
     {
-        $crops = Crop::all();
+        $crops = DB::table('crops')->get();
+        // $crops = Crop::all();
         return view('crops.diseases', compact('crops'));
     }
 
