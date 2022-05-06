@@ -2,20 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Crop;
+use App\Models\Harvest;
 use Illuminate\Http\Request;
-
-class CropController extends Controller
+use Validator;
+class HarvestController extends Controller
 {
-
-
-
-      public function previewcrop($id)
-    {
-        $crop = Crop::find($id);
-        return $crop;
-
-    }
     /**
      * Display a listing of the resource.
      *
@@ -44,16 +35,26 @@ class CropController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'date' => 'required',
+            'unit' => 'required',
+            'quantity' => 'required',
+        ]);
+          if ($validator->passes()) {
+            $harvest =  Harvest::create($request->all());
+         return response()->json(['success'=>'Saved is successfully added']);
+        }
+     
+        return response()->json(['error'=>$validator->errors()->all()]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Crop  $crop
+     * @param  \App\Models\Harvest  $harvest
      * @return \Illuminate\Http\Response
      */
-    public function show(Crop $crop)
+    public function show(Harvest $harvest)
     {
         //
     }
@@ -61,10 +62,10 @@ class CropController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Crop  $crop
+     * @param  \App\Models\Harvest  $harvest
      * @return \Illuminate\Http\Response
      */
-    public function edit(Crop $crop)
+    public function edit(Harvest $harvest)
     {
         //
     }
@@ -73,10 +74,10 @@ class CropController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Crop  $crop
+     * @param  \App\Models\Harvest  $harvest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Crop $crop)
+    public function update(Request $request, Harvest $harvest)
     {
         //
     }
@@ -84,10 +85,10 @@ class CropController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Crop  $crop
+     * @param  \App\Models\Harvest  $harvest
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Crop $crop)
+    public function destroy(Harvest $harvest)
     {
         //
     }

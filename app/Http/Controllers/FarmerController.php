@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Crop;
 use App\Models\Farmer;
-use Illuminate\Http\Request;
+use App\Models\Field;
 use DB;
+use Illuminate\Http\Request;
 
 class FarmerController extends Controller
 {
@@ -37,6 +38,14 @@ class FarmerController extends Controller
     {
         $farmer = Farmer::with('fields')->find($id);
         return $farmer;
+
+    }
+
+      public function farmerdetails($id)
+    {
+        $farmer = Farmer::with('fields')->find($id);
+        $fields = Field::where('farmer_id', $id)->with('crops')->get();
+        return view('admins.farmer-details', compact(['farmer', 'fields']));
 
     }
 

@@ -41,3 +41,15 @@
             </div>
         </section>
 @endsection
+@push('scripts')
+j
+<script src="{{ asset('/sw.js') }}"></script>
+<script>
+    $('.sidebar-right').hide();
+    if (!navigator.serviceWorker.controller) {
+        navigator.serviceWorker.register("/sw.js").then(function (reg) {
+            console.log("Service worker has been registered for scope: " + reg.scope);
+        });
+    }
+</script>
+@endpush

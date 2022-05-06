@@ -18,15 +18,27 @@
 <body>
 	<div class="app-container app-theme-white body-tabs-shadow fixed-header">
 		<div class="app-header header-shadow">
-			<div class="app-header__logo">
-				<a href="index.php.html"><img src="{{ asset('images/image.png') }}" style="width:100px;height:50px;"></a>
-			</div>    
-			<div class="app-header__content">
-				<div class="app-header-right">
-					{{-- Header Right --}}     
-				</div>
-			</div>
-		</div>     
+            <div class="app-header__logo">
+                <a href="{{ url('/') }}"><img src="{{ asset('images/image.png') }}" style="width:100px;height:50px;"></a>
+        </div>    
+            <div class="app-header__content">
+                <div class="app-header-right">
+                    <div class="row">
+                            <div class="col-md-6">
+                                <a style="color: #66BB6A;" href="javascript:history.back()" type="button" data-toggle="tooltip" data-placement="bottom" title="Back">
+                                    <i class="fa fa-lg fa-arrow-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                              <a href="{{ url('/') }}" style="color: red" href="#" type="button" data-toggle="tooltip" data-placement="bottom" title="Close">
+                                 <i class="fa fa-lg fa-times"></i>
+
+                             </a>
+                         </div>
+                     </div>  
+                </div>
+            </div>
+        </div>      
 		<div class="app-main">  
 		<div class="app-main__outer">
                 <div class="app-main__inner">

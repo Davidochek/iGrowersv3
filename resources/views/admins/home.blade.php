@@ -32,7 +32,7 @@
         <div class="card mb-3 widget-content bg-grow-early">
             <div class="widget-content-wrapper text-white">
                 <div class="widget-content-left">
-                    <div class="widget-heading">Farmer Groups</div>
+                    <div class="widget-heading">Fields</div>
                     <div class="widget-subheading"></div>
                 </div>
                 <div class="widget-content-right">
@@ -115,7 +115,7 @@
                            <td>{{$farmer->location}}</td>
                            <td>{{$farmer->fperiod}}</td>
                            <td>2</td>
-                           <td><button class="btn btn-success">Details</button></td>
+                           <td><a href="{{ route('admins.farmerdetails',$farmer->id) }}" class="btn btn-success">Details</a></td>
                        </tr>
                        @endforeach
                    </tbody>

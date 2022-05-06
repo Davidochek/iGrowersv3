@@ -13,7 +13,12 @@
     <link href="{{asset('assets/css/theme-responsive.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/dtb/jquery.dataTables.min.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/select2.min.css')}}" rel="stylesheet" media="screen">
-    <link href="{{asset('assets/css/toastr.min.css')}}" rel="stylesheet" media="screen">        
+    <link href="{{asset('assets/css/toastr.min.css')}}" rel="stylesheet" media="screen"> 
+    
+    <!-- PWA  -->
+    <meta name="theme-color" content="#66BB6A"/>
+    <link rel="apple-touch-icon" href="{{ asset('igrowers.png') }}">
+    <link rel="manifest" href="{{ asset('/manifest.json') }}">   
     <script type="text/javascript" src="{{asset('assets/js/jquery.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.1.10.4.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/toastr.min.js')}}"></script>
@@ -23,71 +28,89 @@
 <body>
     <div id="layout">
         <header id="header" class="header-v3">
-            <nav class="flat-mega-menu">
-                <label for="mobile-button"> <i class="fa fa-bars"></i></label>
-                <input id="mobile-button" type="checkbox">
+         <nav class="flat-mega-menu">
+            <label for="mobile-button"> <i class="fa fa-bars"></i></label>
+            <input id="mobile-button" type="checkbox">
 
-                <ul class="collapse">
-                    <li class="title">
-                        <a href="index.php.html"><img src="{{ asset('images/image.png') }}" style="width:100px;height:50px;"></a>
-                    </li>
-                    <li class="search-bar">
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        @yield('content')
-        <footer class="footer-v1">
-            <div class="footer-down">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p class="text-xs-center crtext">&copy; 2021 iGrowers. All Rights Reserved.</p>
-                        </div>
-                        <div class="col-md-6">
-                        </div>
+            <ul class="collapse">
+                <li class="title">
+                    <a href="{{ url('/') }}"><img src="{{ asset('images/image.png') }}" style="width:100px;height:50px;"></a>
+                </li>
+                <li class="sidebar-right" style="padding-top: 10px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a style="color: #66BB6A;" href="javascript:history.back()" type="button" data-toggle="tooltip" data-placement="bottom" title="Back">
+                                    <i class="fa fa-lg fa-arrow-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                              <a href="{{ url('/') }}" style="color: red" href="#" type="button" data-toggle="tooltip" data-placement="bottom" title="Close">
+                                 <i class="fa fa-lg fa-times"></i>
+
+                             </a>
+                         </div>
+                     </div>             
+                     
+                 </li>
+            </ul>
+        </nav>
+    </header>
+    @yield('content')
+    <footer class="footer-v1">
+        <div class="footer-down">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-xs-center crtext">&copy; 2021 iGrowers. All Rights Reserved.</p>
                     </div>
-                </div>                
-            </div>            
-        </footer>
-    </div>
-    <script type="text/javascript" src="{{ asset('assets/js/nav/jquery.sticky.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/totop/jquery.ui.totop.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/accordion/accordion.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/maps/gmap3.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/fancybox/jquery.fancybox.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/carousel/carousel.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/filters/jquery.isotope.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/twitter/jquery.tweet.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/flickr/jflickrfeed.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/theme-options/theme-options.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/theme-options/jquery.cookies.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/bootstrap/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/bootstrap/bootstrap-slider.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dtb/jquery.dataTables.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dtb/jquery.table2excel.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/dtb/script.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/select2.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/validation-rule.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/bootstrap3-typeahead.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/js/main.js')}}"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            jQuery('.tp-banner').show().revolution({
-                dottedOverlay: "none",
-                delay: 5000,
-                startwidth: 1170,
-                startheight: 480,
-                minHeight: 250,
-                navigationType: "none",
-                navigationArrows: "solo",
-                navigationStyle: "preview1"
-            });
-        });
-    </script>
-    @stack('scripts')
+                    <div class="col-md-6">
+                    </div>
+                </div>
+            </div>                
+        </div>            
+    </footer>
+</div>
+<script type="text/javascript" src="{{ asset('assets/js/nav/jquery.sticky.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/totop/jquery.ui.totop.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/accordion/accordion.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/rs-plugin/js/jquery.themepunch.tools.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/rs-plugin/js/jquery.themepunch.revolution.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/maps/gmap3.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/fancybox/jquery.fancybox.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/carousel/carousel.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/filters/jquery.isotope.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/twitter/jquery.tweet.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/flickr/jflickrfeed.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/theme-options/theme-options.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/theme-options/jquery.cookies.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/bootstrap/bootstrap.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/bootstrap/bootstrap-slider.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/dtb/jquery.dataTables.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/dtb/jquery.table2excel.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/dtb/script.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/select2.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/jquery.validate.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/validation-rule.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/bootstrap3-typeahead.min.js')}}"></script>
+<script type="text/javascript" src="{{ asset('assets/js/main.js')}}"></script>
+<script type="text/javascript">
+        // $(function () {
+  // $('[data-toggle="tooltip"]').tooltip()
+// })
+jQuery(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+    jQuery('.tp-banner').show().revolution({
+        dottedOverlay: "none",
+        delay: 5000,
+        startwidth: 1170,
+        startheight: 480,
+        minHeight: 250,
+        navigationType: "none",
+        navigationArrows: "solo",
+        navigationStyle: "preview1"
+    });
+});
+</script>
+@stack('scripts')
 </body>
 </html>

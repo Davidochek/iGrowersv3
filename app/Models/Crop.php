@@ -29,4 +29,7 @@ class Crop extends Model
     public function fields() {
         return $this->belongsTo(Field::class);
     }
+    public function harvests(){
+        return $this->hasMany(Harvest::class);
+    }
 }

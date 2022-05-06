@@ -1,17 +1,19 @@
 <?php
 
+use App\Http\Controllers\CropController;
 use App\Http\Controllers\DiseasesController;
-use App\Http\Controllers\MarketController;
 use App\Http\Controllers\FarmerController;
 use App\Http\Controllers\FieldController;
+use App\Http\Controllers\HarvestController;
+use App\Http\Controllers\MarketController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PestsController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\ServicesController;
-use App\Http\Controllers\OrderController;
 use App\Http\Controllers\User\AdminsController;
-use App\Http\Controllers\User\SuperusersController;
-use App\Http\Controllers\User\SprovidersController;
 use App\Http\Controllers\User\BuyersController;
+use App\Http\Controllers\User\SprovidersController;
+use App\Http\Controllers\User\SuperusersController;
 use App\Http\Livewire\HomeComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -87,6 +89,7 @@ Route::get('register-crop', [FarmerController::class, 'registercrops'])->name('r
 Route::get('register-farms', [FarmerController::class, 'registerfarms'])->name('register-farms');
 Route::get('add-harvest', [FarmerController::class, 'addharvest'])->name('add-harvest');
 Route::get('previewfarmer/{id}', [FarmerController::class, 'previewfarmer'])->name('previewfarmer');
+Route::get('farmerdetails/{id}', [FarmerController::class, 'farmerdetails'])->name('farmerdetails');
 });
 });
 Route::prefix('superuser')->name('superusers.')->group(function(){
@@ -127,5 +130,7 @@ Route::resource('/market', MarketController::class, [
     'only' => ['index', 'store']
 ]);
 Route::put('updatefarmer/{id}', [FarmerController::class, 'updatefarmer'])->name('updatefarmer');
+Route::get('previewcrop/{id}', [CropController::class, 'previewcrop'])->name('previewcrop');
 Route::resource('farmers', FarmerController::class);
 Route::resource('fields', FieldController::class);
+Route::resource('harvests', HarvestController::class);

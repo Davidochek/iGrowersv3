@@ -23,18 +23,32 @@
 <body>
     <div id="layout">
         <header id="header" class="header-v3">
-            <nav class="flat-mega-menu">
-                <label for="mobile-button"> <i class="fa fa-bars"></i></label>
-                <input id="mobile-button" type="checkbox">
+         <nav class="flat-mega-menu">
+            <label for="mobile-button"> <i class="fa fa-bars"></i></label>
+            <input id="mobile-button" type="checkbox">
 
-                <ul class="collapse">
-                    <li class="title">
-                        <a href="index.php.html"><img src="images/image.png" style="width:100px;height:50px;"></a>
-                    </li>
-                    <li class="search-bar">
-                    </li>
-                </ul>
-            </nav>
+            <ul class="collapse">
+                <li class="title">
+                    <a href="{{ url('/') }}"><img src="{{ asset('images/image.png') }}" style="width:100px;height:50px;"></a>
+                </li>
+                <li class="sidebar-right" style="padding-top: 10px;">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a style="color: #66BB6A;" href="javascript:history.back()" type="button" data-toggle="tooltip" data-placement="bottom" title="Back">
+                                    <i class="fa fa-lg fa-arrow-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                              <a href="{{ url('/') }}" style="color: red" href="#" type="button" data-toggle="tooltip" data-placement="bottom" title="Close">
+                                 <i class="fa fa-lg fa-times"></i>
+
+                             </a>
+                         </div>
+                     </div>             
+                     
+                 </li>
+            </ul>
+        </nav>
         </header>
         {{$slot}}
         <footer id="footer" class="footer-v1">
