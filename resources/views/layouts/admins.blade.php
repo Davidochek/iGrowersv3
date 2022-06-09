@@ -86,15 +86,15 @@
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('admins.add-harvest') }}" class="nav-link">
+                                            <a href="{{ route('admins.view-harvest') }}" class="nav-link">
                                                 <i class="nav-link-icon lnr-picture"></i>
                                                 <span>
-                                                    Crop Harvesting
+                                                    Crop Harvests
                                                 </span>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a disabled href="javascript:void(0);" class="nav-link disabled">
+                                            <a href="{{ route('admins.services') }}" class="nav-link">
                                                 <i class="nav-link-icon lnr-file-empty"></i>
                                                 <span>
                                                     Reports

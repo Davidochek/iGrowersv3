@@ -39,9 +39,6 @@ class FieldController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'crop' => 'required',
-            'season' => 'required',
-            'dateplanted' => 'required',
-            'expectedharvestdate' => 'required',
         ]);
      
         if ($validator->passes()) {

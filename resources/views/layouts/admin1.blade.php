@@ -22,66 +22,11 @@
     <script type="text/javascript" src="{{asset('assets/js/jquery-ui.1.10.4.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/toastr.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script>
-    <style>
-        .tp-banner {
-            width:100%;
-            height: 300px !important;
-            position:relative;
-        }
-        /* The grid: Four equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 33.33%;
-            padding: 10px;
-        }
-
-        /* Style the images inside the grid */
-        .column img {
-            opacity: 0.8; 
-            cursor: pointer; 
-        }
-
-        .column img:hover {
-            opacity: 1;
-        }
-
-        /* Clear floats after the columns */
-/*.row:after {
-  content: "";
-  display: table;
-  clear: both;
-  }*/
-
-  /* The expanding image container */
-  .container1 {
-    position: relative;
-    display: none;
-}
-
-/* Expanding image text */
-#imgtext {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: white;
-    font-size: 20px;
-}
-
-/* Closable button inside the expanded image */
-.closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
-}
-</style>
-</head>
+    </head>
 <body>
     <div id="layout">
         <header id="header" class="header-v3">
-           <nav class="flat-mega-menu">
+         <nav class="flat-mega-menu">
             <label for="mobile-button"> <i class="fa fa-bars"></i></label>
             <input id="mobile-button" type="checkbox">
 
@@ -90,38 +35,38 @@
                     <a href="{{ url('/') }}"><img src="{{ asset('images/image.png') }}" style="width:100px;height:50px;"></a>
                 </li>
                 <li class="sidebar-right" style="padding-top: 10px;">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <a style="color: #66BB6A;" href="javascript:history.back()" type="button" data-toggle="tooltip" data-placement="bottom" title="Back">
-                                <i class="fa fa-lg fa-arrow-left" aria-hidden="true"></i>
-                            </a>
-                        </div>
-                        <div class="col-md-6">
-                          <a href="{{ url('/') }}" style="color: red" href="#" type="button" data-toggle="tooltip" data-placement="bottom" title="Close">
-                           <i class="fa fa-lg fa-times"></i>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a style="color: #66BB6A;" href="javascript:history.back()" type="button" data-toggle="tooltip" data-placement="bottom" title="Back">
+                                    <i class="fa fa-lg fa-arrow-left" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <div class="col-md-6">
+                              <a href="{{ url('/') }}" style="color: red" href="#" type="button" data-toggle="tooltip" data-placement="bottom" title="Close">
+                                 <i class="fa fa-lg fa-times"></i>
 
-                       </a>
-                   </div>
-               </div>             
-               
-           </li>
-       </ul>
-   </nav>
-</header>
-@yield('content')
-<footer class="footer-v1">
-    <div class="footer-down">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="text-xs-center crtext">&copy; 2021 iGrowers. All Rights Reserved.</p>
+                             </a>
+                         </div>
+                     </div>             
+                     
+                 </li>
+            </ul>
+        </nav>
+    </header>
+    @yield('content')
+    <footer class="footer-v1">
+        <div class="footer-down">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="text-xs-center crtext">&copy; 2021 iGrowers. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                    </div>
                 </div>
-                <div class="col-md-6">
-                </div>
-            </div>
-        </div>                
-    </div>            
-</footer>
+            </div>                
+        </div>            
+    </footer>
 </div>
 <script type="text/javascript" src="{{ asset('assets/js/nav/jquery.sticky.js')}}"></script>
 <script type="text/javascript" src="{{ asset('assets/js/totop/jquery.ui.totop.js')}}"></script>

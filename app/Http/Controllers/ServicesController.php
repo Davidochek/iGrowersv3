@@ -74,6 +74,29 @@ public function approve(Request $request,  $id){
 
 }
 
+public function create_service2(Request $request) {
+     $request->validate([
+        'name' => 'required',
+        'details' => 'required',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+
+     $input = $request->all();
+
+     if ($image = $request->file('image')) {
+        $destinationPath = 'image/';
+        $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        $image->move($destinationPath, $profileImage);
+        $input['image'] = "$profileImage";
+    }
+
+    Services::create($input);
+
+    return redirect()->route('admins.register-services')
+    ->with('success','Service created successfully.');
+
+}
+
     /**
      * Store a newly created resource in storage.
      *

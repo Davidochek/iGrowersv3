@@ -5,7 +5,7 @@
     "background_color": "#ffffff",
     "description": "iGrowers Information Farmers Hub",
     "display": "fullscreen",
-    "theme_color": "#66BB6A",
+    "theme_color": "#DDE1E3",
     "icons": [
         {
             "src": "igrowers.png",

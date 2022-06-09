@@ -1,13 +1,22 @@
 @extends('layouts.admin')
 @section('content')
+<style>
+    .section-title-01 {
+        height: 300px !important;
+    } 
+
+    .section-title-01 h1 {
+        padding-top: 60px !important;
+    }
+</style>
 
 <div class="section-title-01 honmob">
-	<div class="bg_parallax image_01_parallax"></div>
-	<div class="opacy_bg_02">
-		<div class="container">
-			<h1>Become a Member</h1>
-		</div>
-	</div>
+    <div class="bg_parallax image_01_parallax"></div>
+    <div class="opacy_bg_02">
+        <div class="container">
+            <h1>Become a Member</h1>
+        </div>
+    </div>
 </div>
 <section class="content-central">
 	@if ($errors->any())
@@ -36,7 +45,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <h3>Farmer Crop for Marketing</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id neque ultrices, pretium mauris id, pharetra lacus. Suspendisse elementum et felis in mollis.</p>
+                                <p>Please provide your name and phone number to become a member. Our team will contact you for additional information.</p>
                                 <h3>To be registered you will be requested to share the following details</h3>
                                 <div class="row">
                                     <div class="col-md-12">
@@ -107,9 +116,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id neque ultrices, pretium mauris id, pharetra lacus. Suspendisse elementum et felis in mollis. Quisque nec porttitor diam, sed tincidunt quam. Aliquam lacinia nisl non lobortis ornare. Nam dapibus dui id lacus condimentum facilisis. Sed bibendum mi at ornare venenatis. </p>
+                                <p> </p>
                                 <div class="row text-center padding-top-mini">
-                                    <a href="{{ route('marketdetails') }}" class="btn btn-primary">Member Profiles</a>
+                                    <a href="#" class="btn btn-primary">Member Profiles</a>
                                 </div>
                             </div>
                         </div>

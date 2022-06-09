@@ -33,7 +33,7 @@
             <div class="filter-title">
                 <div class="title-header">
                     <h2 style="color:#fff;">iGrowers Farmers Information Hub</h2>
-                    <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
+                    <p class="lead">  </p>
                 </div>
             </div>
         </section>

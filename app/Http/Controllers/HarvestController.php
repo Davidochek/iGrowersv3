@@ -42,7 +42,7 @@ class HarvestController extends Controller
         ]);
           if ($validator->passes()) {
             $harvest =  Harvest::create($request->all());
-         return response()->json(['success'=>'Saved is successfully added']);
+         return response()->json(['success'=>'Harvest is successfully added']);
         }
      
         return response()->json(['error'=>$validator->errors()->all()]);

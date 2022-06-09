@@ -1,7 +1,8 @@
 @extends('layouts.admins')
 @section('content')
+
 <style>
-  .card-body {
+	 .card-body {
     flex: 1 1 auto;
     padding: 1.25rem;
   }
@@ -21,28 +22,28 @@
 <div class="row">
   <div class="col-md-6 col-xl-4">
    <div class="main-card mb-3 card">
-        <div class="card-body"><h5 class="card-title">REGISTRATION</h5>
-        New Member Registration <br>
-      <a href="{{ route('admins.register-farmer') }}" class="btn btn-success">Register Farmer</a>
+        <div class="card-body"><h5 class="card-title">CROP HARVESTS REPORTS</h5>
+        All the reports for the harvesting<br>
+      <a href="{{ route('admins.harvest-reports') }}" class="btn btn-success">View Reports</a>
     </div>
       </div>
 </div>   
 <div class="col-md-6 col-xl-4">
  <div class="main-card mb-3 card">
-    <div class="card-body"><h5 class="card-title">DELIVERY</h5>
-      Member Service Delivery <br>
-    <a href="{{ route('admins.farmers') }}" class="btn btn-success">Delivery</a>
+    <div class="card-body"><h5 class="card-title">SERVICES REPORTS</h5>
+      Farmer services request <br>
+    <a href="{{ route('admins.services-report') }}" class="btn btn-success">View Requests</a>
   </div>
   </div>
 </div>   
 <div class="col-md-6 col-xl-4">
  <div class="main-card mb-3 card">
-    <div class="card-body"><h5 class="card-title">SERVICES</h5>
-    Services Reports <br>
-    <a href="{{ route('admins.services') }}" class="btn btn-success">View Services</a>
+    <div class="card-body"><h5 class="card-title">Register Services</h5>
+    Create or add extension services for the farmers  <br>
+    <a href="{{ route('admins.register-services') }}" class="btn btn-success">Add Services</a>
   </div>
   </div>
 </div>  
 </div>
+@endsection
 
- @endsection

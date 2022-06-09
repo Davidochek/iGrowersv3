@@ -147,7 +147,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="row">
 	<div class="col-md-12">
 		<div class="main-card mb-3 card">
@@ -160,19 +159,29 @@
 									<tr>
 										<th>#</th>
 										<th>Date</th>
+										<th>Crop</th>
+										<th>Variety</th>
 										<th>Quantity</th>
 										<th>Unit</th>
+										<th>Unit Price</th>
+										<th>Amount</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
+									@foreach ($harvests as $harvest)
 									<tr>
 										<th scope="row">1</th>
-										<td>2022-03-29</td>
-										<td>2000</td>
-										<td>Pcs</td>
-										<td><button class="btn btn-success">Print</button></td>
+										<td>{{$harvest->date}}</td>
+										<td>Avocado</td>
+										<td>{{$harvest->avocadovariety}}</td>
+										<td>{{$harvest->totalquantity}}</td>
+										<td>{{$harvest->unit}}</td>
+										<td>{{$harvest->price}}</td>
+										<td>{{$harvest->amount}}</td>
+										<td><a href="{{ route('admins.print', $harvest->id) }}" target="_blank" class="btn btn-success">Print</a></td>
 									</tr>
+									@endforeach
 								</tbody>
 							</table>
 						</div>
@@ -199,31 +208,68 @@
 				<form>
 					@csrf
 					<div class="row form-group" hidden>
-						<label for="" class="col-md-3">Crop Id</label>
-						<div class="col-md-9">
+						<label for="" class="col-md-5">Crop Id</label>
+						<div class="col-md-7">
 							<input type="number" class="form-control" id="crop_id"  name ="crop_id">
 						</div>
 					</div>
+					<div class="row form-group" hidden>
+						<label for="" class="col-md-5">Farmer Id</label>
+						<div class="col-md-7">
+							<input type="number" class="form-control" id="farmer_id"  name ="farmer_id" value="{{$farmer->id}}">
+						</div>
+					</div><div class="row form-group" hidden>
+						<label for="" class="col-md-5">Farmer Name</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="farmer_name"  name ="farmer_name" value="{{$farmer->name}}">
+						</div>
+					</div><div class="row form-group" hidden>
+						<label for="" class="col-md-5">Farmer Phone</label>
+						<div class="col-md-7">
+							<input type="text" class="form-control" id="farmer_phone"  name ="farmer_phone" value="{{$farmer->phone}}">
+						</div>
+					</div>
 					<div class="row form-group">
-						<label for="" class="col-md-3">Date Harvested</label>
-						<div class="col-md-9">
+						<label for="" class="col-md-5">Date Harvested</label>
+						<div class="col-md-7">
 							<input type="date" class="form-control" id="date"  name ="date">
 						</div>
 					</div>
 					<div class="row form-group">
-						<label for="" class="col-md-3">Unit</label>
-						<div class="col-md-9">
+						<label for="" class="col-md-5">Unit</label>
+						<div class="col-md-7">
 							<select name="unit" id="unit" class="form-control">
-								<option disabled="disabled" selected="true">Select One</option>
-								<option>Pcs</option>
 								<option>Kgs</option>
+								<option>Pcs</option>
 							</select>
 						</div>
 					</div>
 					<div class="row form-group">
-						<label for="" class="col-md-3">Quantity</label>
-						<div class="col-md-9">
+						<label for="" class="col-md-5">Avocado Type</label>
+						<div class="col-md-7">
+							<select name="avocadovariety" id="avocadovariety" class="form-control">
+								<option disabled="disabled" selected="true">Select One</option>
+								<option>Hass</option>
+								<option>Fuerte</option>
+							</select>
+						</div>
+					</div>
+					<div class="row form-group">
+						<label for="" class="col-md-5">No. of Crates</label>
+						<div class="col-md-7">
+							<input type="number" class="form-control" id="crates"  name ="crates">
+						</div>
+					</div>
+					<div class="row form-group">
+						<label for="" class="col-md-5">Quantity(in Kgs)</label>
+						<div class="col-md-7">
 							<input type="number" class="form-control" id="quantity"  name ="quantity">
+						</div>
+					</div>
+					<div class="row form-group" hidden>
+						<label for="" class="col-md-5">Price/Kg</label>
+						<div class="col-md-7">
+							<input type="number" class="form-control" id="price"  name ="price" value="30">
 						</div>
 					</div>
 				</div>
@@ -255,6 +301,10 @@
 	});
 	}
 $(document).on('click', '#save_harvest', function() {
+	var c = $('#crates').val() * 1.8;
+	let totalquantity = $('#quantity').val() - c;
+	let amount = totalquantity * $('#price').val();
+	let phone = parseInt($('#farmer_phone').val());
 			$.ajax({
 				url: "{{ url('/harvests') }}",
 				type: 'post',
@@ -262,16 +312,25 @@ $(document).on('click', '#save_harvest', function() {
 				data: {
 					'_token' : $('input[name = _token]').val(),
 					'crop_id': $('#crop_id').val(),
+					'farmer_id': $('#farmer_id').val(),
+					'farmer_name': $('#farmer_name').val(),
+					'farmer_phone': phone,
 					'unit': $('#unit').val(),
 					'quantity':  $('#quantity').val(),
-					'date':  $('#date').val()
+					'totalquantity' : totalquantity,
+					'date':  $('#date').val(),
+					'avocadovariety':  $('#avocadovariety').val(),
+					'crates':  $('#crates').val(),
+					'price':  $('#price').val(),
+					'amount': amount,
 				},
 			success:function(response){
 			$('#successmessage').addClass('alert alert-success');
 			$('#successmessage').text(response.success);
 			$('#harvestModal').modal('hide')
-			$("html, body").animate({ scrollTop: 0 }, "slow");
- 				 return false;
+			window.location.reload();
+			//$("html, body").animate({ scrollTop: 0 }, "slow");
+ 				// return false;
 		}
 		});
 	});

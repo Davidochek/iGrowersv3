@@ -15,4 +15,5 @@ class Farmer extends Model
     public function fields(){
     	return $this->hasMany(Field::class);
     }
+
 }

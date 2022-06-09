@@ -20,35 +20,28 @@
 					<div class="col-md-8 single-blog">
 						<div class="post-item">
 							<div class="row">
-								
-								<!-- New -->
 								<div class="col-md-12">
-									<div class="expand">
-										<div id="single-carousel">
-											<div class="img-hover">
-												<img id="expandedImg" src="{{ asset($diseasedetails->image1) }}" class="img-responsive">
-											</div>
-										</div>
+									<div class="container1">
+										<span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+										<img id="expandedImg" style="width:100%">
+										<div id="imgtext"></div>
 									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="post-content"><p>Click the images below to enlarge</p></div>
-								</div>
-								<!-- The three columns -->
-								<div class="col-md-12">
+									<div style="text-align:center">
+										<p>Click on the images below:</p>
+									</div>
 									<div class="row">
-										<div class="col-md-4">
-											<img id="imgclick1" src="{{ asset($diseasedetails->image2) }}"  alt="" class="img-responsive" style="height: 150px;" onclick="myFunction(this);">
+										<div class="column">
+											<img src="{{ asset($diseasedetails->image2) }}" alt="" style="width:100%; max-height: 125px;" onclick="myFunction(this);">
 										</div>
-										<div class="col-md-4">
-
-											<img id="imgclick2" src="{{ asset($diseasedetails->image3) }}" alt="" class="img-responsive" style="height: 150px;" onclick="myFunction(this);">
+										<div class="column">
+											<img src="{{ asset($diseasedetails->image3) }}"  alt="" style="width:100%; max-height: 125px;" onclick="myFunction(this);">
 										</div>
-										<div class="col-md-4">
-											<img id="imgclick3" src="{{ asset($diseasedetails->image1) }}"  alt="" class="img-responsive" style="height: 150px;" onclick="myFunction(this);">
+										<div class="column">
+											<img src="{{ asset($diseasedetails->image1) }}"  alt="" style="width:100%; max-height: 125px;" onclick="myFunction(this);">
 										</div>
 									</div>
 								</div>
+								
 
 								<div class="col-md-12 pt-4">
 									<div class="post-content">

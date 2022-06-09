@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.admin1')
 
 @section('content')
 
@@ -35,14 +35,13 @@
             <div class="filter-title">
                 <div class="title-header">
                     <h2 style="color:#fff;">iGrowers Farmers Information Hub</h2>
-                    <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p>
-                    <a href="{{ route('home') }}" class="btn btn-primary">Get Started</a>
+                    {{-- <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  </p> --}}
+                    <a href="{{ route('admins.home') }}" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </section>
 @endsection
 @push('scripts')
-j
 <script src="{{ asset('/sw.js') }}"></script>
 <script>
     $('.sidebar-right').hide();

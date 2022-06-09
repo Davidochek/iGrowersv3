@@ -18,4 +18,8 @@ class Field extends Model
     public function crops(){
     	return $this->hasMany(Crop::class);
     }
+
+    public function harvests() {
+     	return $this->hasManyThrough(Harvest::class, Crop::class);
+     }
 }

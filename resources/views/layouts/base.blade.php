@@ -19,6 +19,13 @@
     <script type="text/javascript" src="{{asset('assets/js/toastr.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/modernizr.js')}}"></script>
     @livewireStyles
+    <style>
+        .tp-banner {
+    width:100%;
+    height: 300px !important;
+    position:relative;
+}
+    </style>
 </head>
 <body>
     <div id="layout">

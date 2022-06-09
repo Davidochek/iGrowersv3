@@ -45,7 +45,7 @@
 					@if ($service->status == "approved")
 					<div class="col-xs-6 col-sm-4 col-md-3 nature hsgrids"
 					style="padding-right: 5px;padding-left: 5px;">
-					<a class="g-list" href="service-details/ac-wet-servicing.html">
+					<a class="g-list" href="#">
 						<div class="img-hover">
 							<img src="/image/{{ $service->image }}" alt=""
 							class="img-responsive">

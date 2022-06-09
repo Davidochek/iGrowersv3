@@ -30,7 +30,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('crops.home');
+    // return view('crops.home');
+    return view('admins.login');
 });
 
 
@@ -87,9 +88,15 @@ Route::post('logout', [AdminsController::class, 'logout'])->name('logout');
 Route::view('register-farmer', 'admins.register-farmer')->name('register-farmer');
 Route::get('register-crop', [FarmerController::class, 'registercrops'])->name('register-crop');
 Route::get('register-farms', [FarmerController::class, 'registerfarms'])->name('register-farms');
-Route::get('add-harvest', [FarmerController::class, 'addharvest'])->name('add-harvest');
+Route::get('view-harvest', [FarmerController::class, 'viewharvest'])->name('view-harvest');
+Route::get('harvest-reports', [FarmerController::class, 'harvestreports'])->name('harvest-reports');
+Route::get('services-report', [FarmerController::class, 'servicesreports'])->name('services-report');
+Route::get('register-services', [FarmerController::class, 'registerservices'])->name('register-services');
 Route::get('previewfarmer/{id}', [FarmerController::class, 'previewfarmer'])->name('previewfarmer');
 Route::get('farmerdetails/{id}', [FarmerController::class, 'farmerdetails'])->name('farmerdetails');
+Route::get('farmers', [FarmerController::class, 'farmers'])->name('farmers');
+Route::post('create_service2', [ServicesController::class, 'create_service2'])->name('create_service2');
+Route::get('services', [FarmerController::class, 'services'])->name('services');
 });
 });
 Route::prefix('superuser')->name('superusers.')->group(function(){
@@ -131,6 +138,9 @@ Route::resource('/market', MarketController::class, [
 ]);
 Route::put('updatefarmer/{id}', [FarmerController::class, 'updatefarmer'])->name('updatefarmer');
 Route::get('previewcrop/{id}', [CropController::class, 'previewcrop'])->name('previewcrop');
+Route::post('admins/pdfreport', [FarmerController::class, 'pdfreport'])->name('admins.pdfreport');
+Route::get('admins/print/{id}', [FarmerController::class, 'print'])->name('admins.print');
+Route::get('admins/print2/{id}', [FarmerController::class, 'print2'])->name('admins.print2');
 Route::resource('farmers', FarmerController::class);
 Route::resource('fields', FieldController::class);
 Route::resource('harvests', HarvestController::class);

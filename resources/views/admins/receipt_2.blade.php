@@ -285,7 +285,7 @@ footer .end {
 	<header class="clearfix">
 		<div class="container">
 			<figure>
-        <img src="{{public_path ('images/image.png')}}" alt="">
+       <img src="{{public_path ('images/image.png')}}" alt="">
 			</figure>
 			<div class="company-info">
 				<h2 class="title">iGrowers Info. Hub</h2>
